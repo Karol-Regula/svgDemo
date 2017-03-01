@@ -23,8 +23,8 @@ function draw(event) {
     l.setAttribute("y2", event.offsetY);
     l.setAttribute("style", "stroke:rgb(0,0,0);stroke-width:1");
     svg.appendChild(l);
+    first = 0;
   }
-  first = 0;
 
   var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   x = event.offsetX;
