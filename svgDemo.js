@@ -12,10 +12,11 @@ function clear() {
   c.setAttribute("r", "2000");
   c.setAttribute("fill", "white");
   svg.appendChild(c);
+  first = 1;
 }
 
 function draw(event) {
-  if (first != 1){
+  if (first > 1){
     var l = document.createElementNS("http://www.w3.org/2000/svg", "line");
     l.setAttribute("x1", x);
     l.setAttribute("y1", y);
@@ -23,8 +24,8 @@ function draw(event) {
     l.setAttribute("y2", event.offsetY);
     l.setAttribute("style", "stroke:rgb(0,0,0);stroke-width:1");
     svg.appendChild(l);
-    first = 0;
   }
+  first++;
 
   var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   x = event.offsetX;
